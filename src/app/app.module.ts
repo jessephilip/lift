@@ -12,11 +12,16 @@ import { AppComponent } from './app.component';
 import { environment } from '../environments/environment';
 
 // services
+import { AuthenticationService } from './shared/services/authentication.service';
 import { DatabaseService } from './shared/services/database.service';
+import { LandingPageComponent } from './components/landing-page/landing-page.component';
+
+import { AppRoutingModule } from './routing/app-routing.module';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LandingPageComponent
   ],
   imports: [
     BrowserModule,
@@ -24,9 +29,13 @@ import { DatabaseService } from './shared/services/database.service';
     HttpModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
+    AppRoutingModule
   ],
-  providers: [DatabaseService],
+  providers: [
+    AuthenticationService,
+    DatabaseService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
