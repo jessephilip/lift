@@ -1,5 +1,7 @@
+@import '../../../colors.scss';
+
 header {
-  box-shadow: 0px 3px 5px #bbb;
+  box-shadow: $basicBoxShadow;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -11,7 +13,7 @@ header {
   }
 
   &.logged-in {
-    background-color: rebeccapurple;
+    background-color: $mainColor;
     color: white;
   }
 
