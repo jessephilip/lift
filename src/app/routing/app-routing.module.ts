@@ -5,7 +5,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { LandingPageComponent } from '../components/landing-page/landing-page.component';
 
 const appRoutes: Routes = [
-  { path: '', component: LandingPageComponent },
+  { path: 'landingpage', component: LandingPageComponent },
+  { path: '**', component: LandingPageComponent },
+
 ];
 
 @NgModule({
