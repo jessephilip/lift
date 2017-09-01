@@ -18,12 +18,14 @@ import { LandingPageComponent } from './pages/landing-page/landing-page.componen
 
 import { AppRoutingModule } from './routing/app-routing.module';
 import { BrandHeaderComponent } from './components/brand-header/brand-header.component';
+import { ActivityBarComponent } from './components/activity-bar/activity-bar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LandingPageComponent,
-    BrandHeaderComponent
+    BrandHeaderComponent,
+    ActivityBarComponent
   ],
   imports: [
     BrowserModule,
