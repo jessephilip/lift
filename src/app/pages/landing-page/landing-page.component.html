@@ -1,0 +1,5 @@
+<app-brand-header></app-brand-header>
+<button
+  (click)="loggedIn ? logout() : googleLogin()">
+  {{ loggedIn ? 'Logout' : 'Login with Google' }}
+</button>

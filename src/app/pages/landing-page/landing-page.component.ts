@@ -19,7 +19,7 @@ export class LandingPageComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.auth.loginState().subscribe(user => {
+    this.auth.getUser().subscribe(user => {
       if (user && user.uid) {
         this.loggedIn = true;
         this.welcomeMessage = `Welcome ${user.displayName}`;

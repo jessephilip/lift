@@ -14,14 +14,16 @@ import { environment } from '../environments/environment';
 // services
 import { AuthenticationService } from './shared/services/authentication.service';
 import { DatabaseService } from './shared/services/database.service';
-import { LandingPageComponent } from './components/landing-page/landing-page.component';
+import { LandingPageComponent } from './pages/landing-page/landing-page.component';
 
 import { AppRoutingModule } from './routing/app-routing.module';
+import { BrandHeaderComponent } from './components/brand-header/brand-header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LandingPageComponent
+    LandingPageComponent,
+    BrandHeaderComponent
   ],
   imports: [
     BrowserModule,

@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 // components for routing
-import { LandingPageComponent } from '../components/landing-page/landing-page.component';
+import { LandingPageComponent } from '../pages/landing-page/landing-page.component';
 
 const appRoutes: Routes = [
   { path: 'landingpage', component: LandingPageComponent },
