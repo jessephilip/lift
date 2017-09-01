@@ -7,8 +7,7 @@ export class AuthenticationService {
 
   constructor (private auth: AngularFireAuth) {}
 
-
-  public loginState () {
+  public getUser () {
     return this.auth.authState;
   }
 
