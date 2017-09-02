@@ -14,9 +14,10 @@ export class LandingPageComponent implements OnInit {
   public welcomeMessage = 'Welcome';
   public loggedIn: boolean;
 
-  constructor (private auth: AuthenticationService, private dbService: DatabaseService) {
-    // console.log('db service: ', dbService.getDatabase());
-  }
+  constructor (
+    private auth: AuthenticationService,
+    private dbService: DatabaseService
+  ) {}
 
   ngOnInit() {
     this.auth.getUser().subscribe(user => {

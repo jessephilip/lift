@@ -8,13 +8,13 @@ import { Component, OnInit } from '@angular/core';
 export class ActivityBarComponent implements OnInit {
 
   public activities = [
-    { name: 'today', icon: 'fa fa-calendar-check-o' },
-    { name: 'schedule', icon: 'fa fa-list-alt' },
-    { name: 'calendar', icon: 'fa fa-calendar' },
-    { name: 'goals', icon: 'fa fa-star-o' },
-    { name: 'profile', icon: 'fa fa-user' },
-    { name: 'food log', icon: 'fa fa-cutlery' },
-    { name: 'history', icon: 'fa fa-history' },
+    { name: 'today', icon: 'fa fa-calendar-check-o', route: 'today' },
+    { name: 'schedule', icon: 'fa fa-list-alt', route: 'schedule' },
+    { name: 'calendar', icon: 'fa fa-calendar', route: 'calendar' },
+    { name: 'goals', icon: 'fa fa-star-o', route: 'goals' },
+    { name: 'profile', icon: 'fa fa-user', route: 'profile' },
+    { name: 'food log', icon: 'fa fa-cutlery', route: 'food' },
+    { name: 'history', icon: 'fa fa-history', route: 'history' },
   ];
 
   constructor() { }

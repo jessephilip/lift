@@ -1,5 +1,6 @@
 <app-brand-header></app-brand-header>
 <app-activity-bar></app-activity-bar>
+<router-outlet></router-outlet>
 <button
   (click)="loggedIn ? logout() : googleLogin()">
   {{ loggedIn ? 'Logout' : 'Login with Google' }}

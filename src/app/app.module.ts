@@ -19,13 +19,29 @@ import { LandingPageComponent } from './pages/landing-page/landing-page.componen
 import { AppRoutingModule } from './routing/app-routing.module';
 import { BrandHeaderComponent } from './components/brand-header/brand-header.component';
 import { ActivityBarComponent } from './components/activity-bar/activity-bar.component';
+import { TodayComponent } from './pages/today/today.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { ScheduleComponent } from './pages/schedule/schedule.component';
+import { CalendarComponent } from './pages/calendar/calendar.component';
+import { GoalsComponent } from './pages/goals/goals.component';
+import { HistoryComponent } from './pages/history/history.component';
+import { FoodComponent } from './pages/food/food.component';
+import { ProfileComponent } from './pages/profile/profile.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LandingPageComponent,
     BrandHeaderComponent,
-    ActivityBarComponent
+    ActivityBarComponent,
+    TodayComponent,
+    NotFoundComponent,
+    ScheduleComponent,
+    CalendarComponent,
+    GoalsComponent,
+    HistoryComponent,
+    FoodComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,

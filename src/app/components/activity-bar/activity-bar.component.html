@@ -1,7 +1,9 @@
 <section class="activity-bar">
   <ul>
     <li *ngFor="let activity of activities">
-      <div class="activity-tile">
+      <div
+        [routerLink]="activity.route"
+        class="activity-tile">
         <i [class]="activity.icon + ' fa-2x'"></i>
         <div>{{ activity.name | uppercase }}</div>
       </div>
