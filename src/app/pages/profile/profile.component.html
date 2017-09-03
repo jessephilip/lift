@@ -1,3 +1,5 @@
-<p>
-  profile works!
-</p>
+<h1>Profile Page</h1>
+<button
+(click)="loggedIn ? logout() : googleLogin()">
+{{ loggedIn ? 'Logout' : 'Login with Google' }}
+</button>
