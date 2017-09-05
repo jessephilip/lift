@@ -7,9 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TodayComponent implements OnInit {
 
-  constructor() { }
+  public currentDate: number;
+  constructor() {}
 
   ngOnInit() {
+    this.currentDate = Date.now();
   }
-
 }

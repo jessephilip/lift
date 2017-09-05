@@ -5,3 +5,12 @@ div, span, header, footer, main, section, article, aside {
   margin: 0;
   padding: 0;
 }
+
+body {
+  height: 100vh;
+  overflow-y: hidden;
+}
+
+app-today {
+  overflow-y: auto;
+}
