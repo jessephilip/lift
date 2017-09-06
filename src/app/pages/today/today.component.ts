@@ -13,4 +13,13 @@ export class TodayComponent implements OnInit {
   ngOnInit() {
     this.currentDate = Date.now();
   }
+
+  /**
+   * Opens the dialog to create a new note for the current date.
+   *
+   * @memberof TodayComponent
+   */
+  public addNote (): void {
+    console.log('note added.');
+  }
 }
