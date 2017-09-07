@@ -1,7 +1,13 @@
+@import '../../../variables.scss';
+
 main {
   align-items: center;
   border: 1px solid black;
   display: flex;
   justify-content: center;
   padding: 15px;
+
+  &.today {
+    background-color: $accentColor;
+  }
 }
