@@ -13,6 +13,8 @@ body {
 }
 
 app-today, app-schedule, app-calendar, app-goals, app-profile, app-food, app-history {
+  overflow-x: hidden;
   overflow-y: auto;
   height: 100%;
+  width: 100%;
 }
