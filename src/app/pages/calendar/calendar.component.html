@@ -1,1 +1,25 @@
-<h1>Calendar Page</h1>
+<!-- stuff above the actual calendar -->
+
+<!-- the main calendar -->
+<header class="calendar-header">
+  <div class="previous-calendar-button">
+    <button (click)="changeCalendar(-1)"><</button>
+  </div>
+  <div class="calendar-texts">
+    <span class="date-text">{{ calendarService.getMonthToString(monthDisplayed) }} {{ yearDisplayed }}</span>
+  </div>
+  <div class="next-calendar-button">
+    <button (click)="changeCalendar(1)">></button>
+  </div>
+</header>
+<main class="calendar-grid">
+  <div
+  class="weekday-cell"
+  *ngFor="let day of days">
+  <p>{{ day }}</p>
+</div>
+  <app-calendar-cell
+  *ngFor="let day of showMonth"
+  [day]="day">
+  </app-calendar-cell>
+</main>

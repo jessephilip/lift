@@ -27,6 +27,8 @@ import { GoalsComponent } from './pages/goals/goals.component';
 import { HistoryComponent } from './pages/history/history.component';
 import { FoodComponent } from './pages/food/food.component';
 import { ProfileComponent } from './pages/profile/profile.component';
+import { CalendarCellComponent } from './components/calendar-cell/calendar-cell.component';
+import { DateSuffixPipe } from './shared/pipes/date-suffix.pipe';
 
 @NgModule({
   declarations: [
@@ -41,7 +43,9 @@ import { ProfileComponent } from './pages/profile/profile.component';
     GoalsComponent,
     HistoryComponent,
     FoodComponent,
-    ProfileComponent
+    ProfileComponent,
+    CalendarCellComponent,
+    DateSuffixPipe
   ],
   imports: [
     BrowserModule,
