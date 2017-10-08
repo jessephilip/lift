@@ -12,9 +12,16 @@ body {
   overflow-y: hidden;
 }
 
-app-today, app-schedule, app-calendar, app-goals, app-profile, app-food, app-history {
+app-today, app-schedule, app-calendar, app-goals, app-profile, app-food, app-history, app-modal {
   overflow-x: hidden;
   overflow-y: auto;
   height: 100%;
   width: 100%;
+}
+
+app-modal {
+  display: flex;
+  left: 0;
+  position: absolute;
+  top: 0;
 }

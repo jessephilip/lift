@@ -9,14 +9,14 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 
 import { AppComponent } from './app.component';
 
+import { AppRoutingModule } from './routing/app-routing.module';
 import { environment } from '../environments/environment';
 
 // services
 import { AuthenticationService } from './shared/services/authentication.service';
 import { DatabaseService } from './shared/services/database.service';
+import { ModalService } from 'app/shared/services/modal.service';
 import { LandingPageComponent } from './pages/landing-page/landing-page.component';
-
-import { AppRoutingModule } from './routing/app-routing.module';
 import { BrandHeaderComponent } from './components/brand-header/brand-header.component';
 import { ActivityBarComponent } from './components/activity-bar/activity-bar.component';
 import { TodayComponent } from './pages/today/today.component';
@@ -29,6 +29,8 @@ import { FoodComponent } from './pages/food/food.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { CalendarCellComponent } from './components/calendar-cell/calendar-cell.component';
 import { DateSuffixPipe } from './shared/pipes/date-suffix.pipe';
+import { ModalComponent } from './components/modal/modal.component';
+import { TimerComponent } from './components/timer/timer.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +47,9 @@ import { DateSuffixPipe } from './shared/pipes/date-suffix.pipe';
     FoodComponent,
     ProfileComponent,
     CalendarCellComponent,
-    DateSuffixPipe
+    DateSuffixPipe,
+    ModalComponent,
+    TimerComponent
   ],
   imports: [
     BrowserModule,
@@ -58,7 +62,8 @@ import { DateSuffixPipe } from './shared/pipes/date-suffix.pipe';
   ],
   providers: [
     AuthenticationService,
-    DatabaseService
+    DatabaseService,
+    ModalService
   ],
   bootstrap: [AppComponent]
 })

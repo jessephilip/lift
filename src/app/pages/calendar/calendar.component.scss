@@ -22,6 +22,9 @@ header.calendar-header {
 
   button {
     @include button(white, $accentColor);
+    font-size: 1.5em;
+    height: 50px;
+    width: 50px;
   }
 }
 

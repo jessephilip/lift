@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TodayComponent implements OnInit {
 
+  // DUMMY DATA
+  public schedule = { food: false, exercise: false, activities: false};
+
   public currentDate: number;
   constructor() {}
 
