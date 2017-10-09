@@ -3,8 +3,16 @@
     <h2>Up-Lift</h2>
   </div>
   <div class="login-section">
-    <button class="sign-up">Sign Up</button>
-    <button class="login">Login</button>
+    <button
+      class="sign-up"
+      (click)="signUp()">
+      Sign Up
+    </button>
+    <button
+      class="login"
+      (click)="login()">
+      Login
+    </button>
   </div>
 </header>
 <main>
@@ -48,4 +56,5 @@
       <p>&copy; Up-Lift 2017. All rights reserved.</p>
   </footer>
 </main>
+<ng-template component-anchor></ng-template>
 
