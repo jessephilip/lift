@@ -31,6 +31,7 @@ import { CalendarCellComponent } from './components/calendar-cell/calendar-cell.
 import { DateSuffixPipe } from './shared/pipes/date-suffix.pipe';
 import { ModalComponent } from './components/modal/modal.component';
 import { TimerComponent } from './components/timer/timer.component';
+import { RegisterComponent } from './components/register/register.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { TimerComponent } from './components/timer/timer.component';
     CalendarCellComponent,
     DateSuffixPipe,
     ModalComponent,
-    TimerComponent
+    TimerComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
