@@ -1,5 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 
+@import './variables.scss';
+
 html, body, h1, h2, h3, h4, h5, h6, p, ul, ol, li, a,
 div, span, header, footer, main, section, article, aside, button {
   border: none;
@@ -10,6 +12,10 @@ div, span, header, footer, main, section, article, aside, button {
 body {
   height: 100vh;
   overflow-y: hidden;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-family: $fontGeo;
 }
 
 app-today, app-schedule, app-calendar, app-goals, app-profile, app-food, app-history, app-modal {
@@ -25,3 +31,5 @@ app-modal {
   position: absolute;
   top: 0;
 }
+
+
