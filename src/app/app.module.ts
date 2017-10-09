@@ -12,10 +12,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './routing/app-routing.module';
 import { environment } from '../environments/environment';
 
-// services
-import { AuthenticationService } from './shared/services/authentication.service';
-import { DatabaseService } from './shared/services/database.service';
-import { ModalService } from 'app/shared/services/modal.service';
+// custom components
 import { LandingPageComponent } from './pages/landing-page/landing-page.component';
 import { BrandHeaderComponent } from './components/brand-header/brand-header.component';
 import { ActivityBarComponent } from './components/activity-bar/activity-bar.component';
@@ -32,6 +29,14 @@ import { DateSuffixPipe } from './shared/pipes/date-suffix.pipe';
 import { ModalComponent } from './components/modal/modal.component';
 import { TimerComponent } from './components/timer/timer.component';
 import { RegisterComponent } from './components/register/register.component';
+
+// services
+import { AuthenticationService } from './shared/services/authentication.service';
+import { DatabaseService } from './shared/services/database.service';
+import { ModalService } from 'app/shared/services/modal.service';
+
+// directives
+import { ComponentAnchorDirective } from './directives/component-anchor.directive';
 
 @NgModule({
   declarations: [
@@ -51,7 +56,8 @@ import { RegisterComponent } from './components/register/register.component';
     DateSuffixPipe,
     ModalComponent,
     TimerComponent,
-    RegisterComponent
+    RegisterComponent,
+    ComponentAnchorDirective
   ],
   imports: [
     BrowserModule,
