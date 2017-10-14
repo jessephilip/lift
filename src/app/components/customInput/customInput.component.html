@@ -1,0 +1,22 @@
+<div
+  class="app-input"
+  [ngClass]="{ 'ng-valid' : validity, 'ng-invalid' : !validity, 'hasFocus' : hasFocus }">
+  <span
+    class="{{ icon }}"></span>
+  <input
+    #input
+    maxlength="{{ maxlength }}"
+    minlength="{{ minlength }}"
+    name="{{ name }}"
+    placeholder="{{ placeholder || name }}"
+    required="{{ required }}"
+    type="{{ type }}"
+    [(ngModel)]="value"
+    (focus)="focusChange('on')"
+    (focusout)="focusChange('off')">
+  <span
+    *ngIf="showValidation"
+    class="validation">
+    {{ activeValidation }}
+  </span>
+</div>

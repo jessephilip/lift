@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AngularFireModule } from 'angularfire2';
@@ -37,6 +37,8 @@ import { ModalService } from 'app/shared/services/modal.service';
 
 // directives
 import { ComponentAnchorDirective } from './directives/component-anchor.directive';
+import { VeilComponent } from './components/veil/veil.component';
+import { CustomInputComponent } from './components/customInput/customInput.component';
 
 @NgModule({
   declarations: [
@@ -57,11 +59,14 @@ import { ComponentAnchorDirective } from './directives/component-anchor.directiv
     ModalComponent,
     TimerComponent,
     RegisterComponent,
-    ComponentAnchorDirective
+    ComponentAnchorDirective,
+    VeilComponent,
+    CustomInputComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
