@@ -1,4 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  Component,
+  ComponentRef,
+  OnInit,
+  ViewChild
+} from '@angular/core';
+import { FormGroup, NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-register',
@@ -7,9 +13,35 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegisterComponent implements OnInit {
 
-  constructor() { }
+  @ViewChild('form') form: NgForm;
+  public componentRef: ComponentRef<RegisterComponent>;
+  public isLoginPressed = {
+    'google': {
+      'pressed' : false
+    },
+    'facebook': {
+      'pressed' : false
+    }
+  };
 
-  ngOnInit() {
+  constructor() {}
+  ngOnInit() {}
+
+  public cancel = () => this.componentRef.destroy();
+
+  public onSubmit (form: NgForm) {
+    console.log(form);
+    if (form.invalid) {
+      alert('form is invalid');
+    }
+
+    if (form.value.password !== form.value.confirm) {
+      alert('password and password confirmation are not identical.');
+    }
+  }
+
+  public loginWithService(value: string) {
+    alert(value);
   }
 
 }

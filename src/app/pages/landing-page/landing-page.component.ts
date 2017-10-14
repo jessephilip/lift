@@ -22,6 +22,7 @@ export class LandingPageComponent implements OnInit {
     const vcr = this.componentAnchor.viewContainerRef;
     vcr.clear();
     const componentRef = vcr.createComponent(componentFactory);
+    componentRef.instance.componentRef = componentRef;
   }
 
   public login (): void {

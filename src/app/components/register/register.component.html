@@ -1,3 +1,75 @@
-<p>
-  register works!
-</p>
+<app-veil
+  [veilClick]="cancel">
+</app-veil>
+<div class="registerModal">
+  <form #form="ngForm" (ngSubmit)="onSubmit(form)">
+    <header>
+      <h1>Register for Up-Lift</h1>
+      <p>Sign up today to have access to this sweet website!</p>
+    </header>
+    <main>
+      <p>Sign in with:</p>
+      <div class="oauthButtons">
+        <div
+          class="btn"
+          [ngClass]="{'pressed': isLoginPressed }"
+          (click)="loginWithService('google')">
+          <i class="fa fa-google"></i>
+          <span>Login with Google</span>
+        </div>
+        <div
+          class="btn"
+          (click)="loginWithService('facebook')">
+          <i class="fa fa-facebook"></i>
+          <span>Login with Facebook</span>
+        </div>
+      </div>
+      <div class="inputs">
+        <custom-input
+          icon="fa fa-user"
+          minlength="4"
+          maxlength="30"
+          name="username"
+          required="true"
+          showValidation="true"
+          type="text"
+          [(ngModel)]="username">
+        </custom-input>
+        <custom-input
+          icon="fa fa-key"
+          minlength="4"
+          maxlength="30"
+          name="password"
+          required="true"
+          showValidation="true"
+          type="password"
+          [(ngModel)]="password">
+        </custom-input>
+        <custom-input
+          icon="fa fa-key"
+          minlength="4"
+          maxlength="30"
+          name="confirm"
+          placeholder="confirm password"
+          required="true"
+          showValidation="true"
+          type="password"
+          [(ngModel)]="confirm">
+        </custom-input>
+      </div>
+    </main>
+    <footer>
+      <button
+        class="btn-cancel"
+        (click)="cancel()">
+        Cancel
+      </button>
+      <button
+        class="btn-success"
+        type="submit"
+        [disabled]="!form.valid">
+        Register
+      </button>
+    </footer>
+  </form>
+</div>

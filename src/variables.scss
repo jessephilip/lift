@@ -6,10 +6,14 @@ $mainColor: blue;
 $lightColor: lighten(blue, 20%);
 $accentColor: gold;
 $accentDark: darken($accentColor, 5%);
+$successGreen: #26C281;
+$cancelRed: #F22613;
 
 // shadows
 $basicBoxShadow: 0px 3px 5px #bbb;
 $basicTextShadow: 1px 1px 2px rgba(150, 150, 150, 1);
+$subtleTextShadow: 1px 1px 2px rgba(0, 0, 0, .2);
+$pressed: inset 0 0 0 32px rgba(0,0,0,0.1);
 
 @mixin button($fontColor, $bgColor) {
   $fontDark: darken($fontColor, 5%);
@@ -26,8 +30,15 @@ $basicTextShadow: 1px 1px 2px rgba(150, 150, 150, 1);
   text-shadow: $basicTextShadow;
 
   &:active {
-    background-color: $bgDark;
-    color: $fontDark;
+    box-shadow: $pressed;
   }
+}
+
+.btn-success {
+  @include button(white, $successGreen);
+}
+
+.btn-cancel {
+  @include button(white, $cancelRed);
 }
 
