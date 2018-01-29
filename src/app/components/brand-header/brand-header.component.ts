@@ -13,10 +13,10 @@ export class BrandHeaderComponent implements OnInit {
   public welcomeMessage = 'Welcome';
   public loggedIn = false;
 
-  constructor(private auth: AuthenticationService) { }
+  constructor(private authService: AuthenticationService) { }
 
   ngOnInit() {
-    this.auth.getUser().subscribe(user => {
+    const user = this.authService.user;
       if (user && user.uid) {
         this.loggedIn = true;
         this.welcomeMessage = `Welcome ${user.displayName}`;
@@ -24,7 +24,5 @@ export class BrandHeaderComponent implements OnInit {
         this.loggedIn = false;
         this.welcomeMessage = 'Welcome';
       }
-    });
   }
-
 }

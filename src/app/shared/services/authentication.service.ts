@@ -1,14 +1,15 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from 'angularfire2/auth';
 import * as firebase from 'firebase/app';
+import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 
 @Injectable()
 export class AuthenticationService {
 
-  constructor (private auth: AngularFireAuth) {}
+  public user;
 
-  public getUser () {
-    return this.auth.authState;
+  constructor (private auth: AngularFireAuth) {
+    this.auth.authState.subscribe(user => this.user = user);
   }
 
   /**
@@ -22,5 +23,9 @@ export class AuthenticationService {
 
   public logout () {
     return this.auth.auth.signOut();
+  }
+
+  public createUserWithEmailAndPassword (email: string, password: string) {
+    return this.auth.auth.createUserWithEmailAndPassword(email, password);
   }
 }

@@ -8,22 +8,23 @@
       <p>Sign up today to have access to this sweet website!</p>
     </header>
     <main>
-      <p>Sign in with:</p>
+      <p>Sign up with:</p>
       <div class="oauthButtons">
         <div
-          class="btn"
-          [ngClass]="{'pressed': isLoginPressed }"
-          (click)="loginWithService('google')">
-          <i class="fa fa-google"></i>
-          <span>Login with Google</span>
-        </div>
-        <div
-          class="btn"
-          (click)="loginWithService('facebook')">
-          <i class="fa fa-facebook"></i>
-          <span>Login with Facebook</span>
+          *ngFor="let service of loginServices"
+          class="btn + {{ service.name }}"
+          [ngClass]="{'pressed': service.isPressed }"
+          (click)="loginWithService(service.name)"
+          (mousedown)="togglePressed(service.name)"
+          (mouseup)="togglePressed(service.name)">
+          <i
+            class="fa"
+            [ngClass]="'fa-' + service.name">
+          </i>
+          <span>Login with {{ service.name | titlecase }}</span>
         </div>
       </div>
+      <p>Or:</p>
       <div class="inputs">
         <custom-input
           icon="fa fa-user"
@@ -34,6 +35,14 @@
           showValidation="true"
           type="text"
           [(ngModel)]="username">
+        </custom-input>
+        <custom-input
+          icon="fa fa-envelope"
+          name="email"
+          required="true"
+          showValidation="true"
+          type="email"
+          [(ngModel)]="email">
         </custom-input>
         <custom-input
           icon="fa fa-key"
@@ -67,7 +76,7 @@
       <button
         class="btn-success"
         type="submit"
-        [disabled]="!form.valid">
+        [disabled]="form.valid">
         Register
       </button>
     </footer>

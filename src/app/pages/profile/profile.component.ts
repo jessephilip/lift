@@ -13,10 +13,10 @@ export class ProfileComponent implements OnInit {
   public welcomeMessage = 'Welcome';
   public loggedIn: boolean;
 
-  constructor (private auth: AuthenticationService) { }
+  constructor (private authService: AuthenticationService) { }
 
   ngOnInit() {
-    this.auth.getUser().subscribe(user => {
+    const user = this.authService.user;
       if (user && user.uid) {
         this.loggedIn = true;
         this.welcomeMessage = `Welcome ${user.displayName}`;
@@ -24,18 +24,17 @@ export class ProfileComponent implements OnInit {
         this.loggedIn = false;
         this.welcomeMessage = 'Welcome';
       }
-    });
   }
 
   public googleLogin () {
-    this.auth.googleLogin().then(status => {
+    this.authService.googleLogin().then(status => {
       this.loggedIn = true;
       this.welcomeMessage = `Welcome ${status.user.displayName}`;
     });
   }
 
   public logout () {
-    this.auth.logout().then(status => this.welcomeMessage = 'Welcome');
+    this.authService.logout().then(status => this.welcomeMessage = 'Welcome');
   }
 
 }
